@@ -1,14 +1,15 @@
 // const fs = require("fs");
 const { ChartJSNodeCanvas } = require("chartjs-node-canvas");
 
-module.exports.generate = async function (configuration, res) {
-  const width = 400;
-  const height = 400;
-
+module.exports.generate = async function (req, res) {
+  const backgroundColour = req.query;
+  const width = parseInt(req.query.width);
+  const height = parseInt(req.query.height);
+  const configuration = req.body;
   const chartJSNodeCanvas = new ChartJSNodeCanvas({
     width,
     height,
-    backgroundColour: "white",
+    backgroundColour,
   });
   const buffer = await chartJSNodeCanvas.renderToBuffer(configuration);
   // await fs.writeFile("./example.png", buffer, function (err, result) { // use to generate localy the graph

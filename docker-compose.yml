@@ -1,14 +1,14 @@
 version: "3"
   
 services:
-  october:
+  societe:
     container_name: societe
     build: 
       context: .
       dockerfile: ./dockerfile
     tty: true
     ports:
-      - "5000:5000"
+      - "8080:8080"
     volumes:
       - ./app:/societe
     command: "yarn start" 

@@ -1,4 +1,5 @@
 const { ChartJSNodeCanvas } = require("chartjs-node-canvas");
+const { query } = require("express");
 var express = require("express");
 const { abort, exit } = require("process");
 var mp = require("./generateGraph");
@@ -15,7 +16,16 @@ app.use((err, req, res, next) => {
 });
 
 app.post("/", (req, res) => {
-  mp.generate(req.body, res);
+  if (
+    "width" in req.query &&
+    "height" in req.query &&
+    "backgroundColour" in req.query &&
+    Object.keys(req.body).length > 0
+  ) {
+    mp.generate(req, res);
+  } else {
+    res.send("need a correct body or params to work ", 403);
+  }
 });
 const port = parseInt(process.argv[process.argv.length - 1]);
 if (isNaN(port)) {
