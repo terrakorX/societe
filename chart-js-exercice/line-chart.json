@@ -1,0 +1,21 @@
+{
+  "type": "line",
+  "data": {
+    "labels": [ "S.04", "S.05", "S.06", "S.07", "S.08", "S.09", "S.10", "S.11", "S.12", "S.13", "S.14", "S.15" ],
+    "datasets": [
+      {
+        "label": "Mises en surveillance par semaine (2022)",
+        "data": [ 4524, 4702, 6145, 4209, 4655, 4103, 4577, 4123, 4041, 4108, 3922, 1884 ],
+        "lineTension": 0,
+        "fill": true,
+        "pointBorderColor": "rgba(2, 113, 219, 1)",
+        "pointBackgroundColor": "rgba(2, 113, 219, 1)",
+        "backgroundColor": "rgba(234, 241, 248, 0.75)",
+        "borderColor": "rgba(2, 113, 219, 1)",
+        "borderWidth": 2,
+        "pointRadius": 2
+      }
+    ]
+  },
+  "options": { "maintainAspectRatio": false, "tooltips": { "enabled": false } }
+}
